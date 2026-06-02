@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibni Atha Fauzi — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<!-- ─── HEADER ─── -->
+<header class="site-header" id="site-header">
+  <div class="container nav-container">
+    <a href="#top" class="logo">
+      <span class="logo-bracket">[</span>IAF<span class="logo-bracket">]</span>
+    </a>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#about"     class="nav-item"><span class="nav-num">01</span><span class="nav-label">Profil</span></a>
+      <a href="#skills"    class="nav-item"><span class="nav-num">02</span><span class="nav-label">Skill</span></a>
+      <a href="#projects"  class="nav-item"><span class="nav-num">03</span><span class="nav-label">Proyek</span></a>
+      <a href="#education" class="nav-item"><span class="nav-num">04</span><span class="nav-label">Pendidikan</span></a>
+      <a href="#activity"  class="nav-item"><span class="nav-num">05</span><span class="nav-label">Aktivitas</span></a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-progress" id="nav-progress"></div>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="about">
+  <div class="hero-bg-text" aria-hidden="true">PORTFOLIO</div>
+  <div class="container hero-inner">
+
+    <div class="hero-text">
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span>Available for opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="name-first">Ibni</span>
+        <em class="name-last">Atha Fauzi</em>
+      </h1>
+      <div class="hero-rule"></div>
+      <p class="hero-roles">
+        <span>Information Systems Student</span>
+        <span class="dot-sep">·</span>
+        <span>Web Developer</span>
+        <span class="dot-sep">·</span>
+        <span>Subang, ID</span>
+      </p>
+      <p class="hero-bio">
+        Mahasiswa Sistem Informasi yang membangun solusi digital dari ide ke kode.
+        Spesialis pengembangan web berbasis PHP &amp; MySQL — dari sistem ritel hingga
+        manajemen gudang. Tujuan: menjadi software engineer yang membuat produk
+        yang benar-benar dipakai orang.
+      </p>
+      <div class="hero-ctas">
+        <a href="mailto:ibni0907@gmail.com" class="cta-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          Email
+        </a>
+        <a href="https://linkedin.com/in/ibni" target="_blank" rel="noopener" class="cta-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 10v7M12 13a3 3 0 0 1 6 0v4"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Rolang-git" target="_blank" rel="noopener" class="cta-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="#projects" class="cta-primary">
+          Lihat Proyek
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="photo-wrap">
+        <div class="photo-corner c-tl"></div>
+        <div class="photo-corner c-tr"></div>
+        <div class="photo-corner c-bl"></div>
+        <div class="photo-corner c-br"></div>
+        <div class="photo-box">
+          <img src="assets/photo.jpeg"
+               alt="Ibni Atha Fauzi"
+               style="width:100%;height:100%;object-fit:cover;">
+        </div>
+        <div class="photo-chip">
+          <span class="chip-dot"></span>Open to Work
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-n">2+</span>
+          <span class="stat-l">Tahun belajar web dev</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-n">5+</span>
+          <span class="stat-l">Proyek selesai</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-n">3+</span>
+          <span class="stat-l">Tech stack dikuasai</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="sec-eyebrow">01 / 05</span>
+      <h2 class="sec-title">Skill &amp; Teknologi</h2>
+      <p class="sec-sub">Kemampuan saat ini — jujur, tanpa dilebih-lebihkan</p>
+    </div>
+
+    <div class="skills-layout">
+      <div class="skills-bars">
+        <h3 class="cat-hd">Bahasa Pemrograman</h3>
+        <div class="sbar-list">
+          <div class="sbar-item">
+            <div class="sbar-info"><span class="sbar-name">HTML &amp; CSS</span><span class="sbadge mahir">Mahir</span></div>
+            <div class="sbar-track"><div class="sbar-fill" style="--p:85"></div></div>
+            <span class="sbar-pct">85%</span>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-info"><span class="sbar-name">PHP</span><span class="sbadge mahir">Mahir</span></div>
+            <div class="sbar-track"><div class="sbar-fill" style="--p:80"></div></div>
+            <span class="sbar-pct">80%</span>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-info"><span class="sbar-name">SQL (MySQL)</span><span class="sbadge mahir">Mahir</span></div>
+            <div class="sbar-track"><div class="sbar-fill" style="--p:78"></div></div>
+            <span class="sbar-pct">78%</span>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-info"><span class="sbar-name">JavaScript</span><span class="sbadge menengah">Menengah</span></div>
+            <div class="sbar-track"><div class="sbar-fill" style="--p:62"></div></div>
+            <span class="sbar-pct">62%</span>
+          </div>
+          <div class="sbar-item">
+            <div class="sbar-info"><span class="sbar-name">Python</span><span class="sbadge menengah">Menengah</span></div>
+            <div class="sbar-track"><div class="sbar-fill" style="--p:55"></div></div>
+            <span class="sbar-pct">55%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-tags">
+        <div>
+          <h3 class="cat-hd">Framework &amp; Tools</h3>
+          <div class="tag-wrap">
+            <span class="stag lvl-a">Bootstrap 5</span>
+            <span class="stag lvl-a">Font Awesome 6</span>
+            <span class="stag lvl-b">jQuery</span>
+            <span class="stag lvl-b">XAMPP / Apache</span>
+            <span class="stag lvl-b">Git &amp; GitHub</span>
+            <span class="stag lvl-b">phpMyAdmin</span>
+            <span class="stag lvl-c">VS Code</span>
+            <span class="stag lvl-c">Figma (basic)</span>
+            <span class="stag lvl-c">Canva</span>
+            <span class="stag lvl-b">Hostinger</span>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <h3 class="cat-hd">Konsep &amp; Metodologi</h3>
+          <div class="tag-wrap">
+            <span class="stag lvl-a">CRUD Development</span>
+            <span class="stag lvl-a">Session Auth (PHP)</span>
+            <span class="stag lvl-b">Analisis Sistem</span>
+            <span class="stag lvl-b">DFD &amp; Flowchart</span>
+            <span class="stag lvl-c">OOP Dasar</span>
+            <span class="stag lvl-c">RESTful Concepts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROJECTS ─── -->
+<section class="section section-tinted" id="projects">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="sec-eyebrow">02 / 05</span>
+      <h2 class="sec-title">Proyek</h2>
+      <p class="sec-sub">Kerja nyata — dari kelas ke produksi</p>
+    </div>
+
+    <div class="proj-featured">
+
+      <article class="pcard">
+        <div class="pcard-visual">
+          <div class="pmock">
+            <div class="pmock-topbar"><span></span><span></span><span></span></div>
+            <div class="pmock-body">
+              <div class="pmock-ln w75"></div>
+              <div class="pmock-ln w55"></div>
+              <div class="pmock-cards">
+                <div class="pmock-c"></div><div class="pmock-c"></div>
+                <div class="pmock-c"></div><div class="pmock-c"></div>
+              </div>
+              <div class="pmock-ln w40"></div>
+            </div>
+          </div>
+          <div class="pcard-label">
+            <span class="ptype mandiri">Proyek Mandiri</span>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-title">Sistem Manajemen Penjualan Ritel</h3>
+          <p class="pcard-sub">Karya Mandiri Pamanukan</p>
+          <p class="pcard-desc">Aplikasi web manajemen toko ritel dengan dua peran — Admin dan Kasir. CRUD produk lengkap, transaksi real-time, modal pencarian item, dan kalkulasi otomatis <code>Total = Ukuran × Harga × Jumlah</code>.</p>
+          <div class="pcard-tech">
+            <span class="ptag">PHP</span><span class="ptag">MySQL</span>
+            <span class="ptag">Bootstrap 5</span><span class="ptag">Font Awesome 6</span><span class="ptag">PDO</span>
+          </div>
+          <div class="pcard-links">
+            <a href="https://github.com/Rolang-git/project-1" target="_blank" class="plnk">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              Repo
+            </a>
+            <a href="#" class="plnk plnk-accent">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard pcard-alt">
+        <div class="pcard-visual">
+          <div class="pmock pmock-dark">
+            <div class="pmock-topbar dark"><span></span><span></span><span></span></div>
+            <div class="pmock-body dark">
+              <div class="pmock-sidebar">
+                <div class="pmock-si"></div>
+                <div class="pmock-si active"></div>
+                <div class="pmock-si"></div>
+                <div class="pmock-si"></div>
+              </div>
+              <div class="pmock-main">
+                <div class="pmock-ln w65 light"></div>
+                <div class="pmock-rows">
+                  <div class="pmock-r"></div>
+                  <div class="pmock-r"></div>
+                  <div class="pmock-r"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pcard-label">
+            <span class="ptype kampus">Tugas Kampus (UTS)</span>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <h3 class="pcard-title">Sistem Manajemen Gudang</h3>
+          <p class="pcard-sub">si_gudang</p>
+          <p class="pcard-desc">Web app manajemen gudang dengan Spica Bootstrap template. Modul lengkap: barang masuk/keluar, supplier, user management, laporan stok. Implementasi session auth, PDO, navigasi dinamis.</p>
+          <div class="pcard-tech">
+            <span class="ptag">PHP</span><span class="ptag">MySQL</span>
+            <span class="ptag">Spica Template</span><span class="ptag">PDO</span><span class="ptag">Session Auth</span>
+          </div>
+          <div class="pcard-links">
+            <a href="#" target="_blank" class="plnk">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              Repo
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="proj-small">
+
+      <article class="psm">
+        <div class="psm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <div class="psm-top">
+          <span class="ptype latihan">Latihan</span>
+          <h3 class="psm-title">To-Do App</h3>
+        </div>
+        <p class="psm-desc">Clone to-do list — add, edit, delete, filter status. Vanilla JS + localStorage.</p>
+        <div class="psm-tech"><span class="ptag-sm">HTML</span><span class="ptag-sm">CSS</span><span class="ptag-sm">JS</span></div>
+        <a href="#" class="psm-link">GitHub →</a>
+      </article>
+
+      <article class="psm">
+        <div class="psm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <div class="psm-top">
+          <span class="ptype latihan">Latihan</span>
+          <h3 class="psm-title">Kalkulator Matriks</h3>
+        </div>
+        <p class="psm-desc">Kalkulator determinan dengan metode kofaktor &amp; eliminasi baris. Visualisasi langkah.</p>
+        <div class="psm-tech"><span class="ptag-sm">Python</span><span class="ptag-sm">NumPy</span></div>
+        <a href="#" class="psm-link">GitHub →</a>
+      </article>
+
+      <article class="psm">
+        <div class="psm-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="psm-top">
+          <span class="ptype akademik">Akademik</span>
+          <h3 class="psm-title">Sistem Penggajian</h3>
+        </div>
+        <p class="psm-desc">Analisis &amp; perancangan sistem penggajian karyawan — DFD, flowchart, dokumentasi lengkap.</p>
+        <div class="psm-tech"><span class="ptag-sm">System Analysis</span><span class="ptag-sm">DFD</span></div>
+        <a href="#" class="psm-link">Dokumen →</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── EDUCATION ─── -->
+<section class="section" id="education">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="sec-eyebrow">03 / 05</span>
+      <h2 class="sec-title">Pendidikan &amp; Sertifikasi</h2>
+      <p class="sec-sub">Jalur belajar formal dan mandiri</p>
+    </div>
+
+    <div class="edu-layout">
+      <div class="edu-left">
+        <h3 class="cat-hd">Pendidikan Formal</h3>
+        <div class="tline">
+          <div class="tline-item">
+            <div class="tline-marker">
+              <div class="tline-dot"></div>
+              <div class="tline-stem"></div>
+            </div>
+            <div class="tline-body">
+              <div class="tline-yr">2022 — Sekarang</div>
+              <div class="tline-title">S1 Sistem Informasi</div>
+              <div class="tline-place">Politeknik Negeri Subang · Subang, Jawa Barat</div>
+              <p class="tline-desc">Fokus pada rekayasa perangkat lunak, basis data, dan analisis sistem. Aktif mengerjakan praktikum berbasis proyek nyata setiap semester.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-right">
+        <h3 class="cat-hd">Kursus &amp; Sertifikasi</h3>
+        <div class="cert-list">
+          <div class="cert-card">
+            <div class="cert-logo dicoding">Di</div>
+            <div class="cert-info">
+              <div class="cert-name">Belajar Dasar Pemrograman Web</div>
+              <div class="cert-org">Dicoding Indonesia</div>
+            </div>
+            <span class="cert-status done">✓ Selesai</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo dicoding">Di</div>
+            <div class="cert-info">
+              <div class="cert-name">Pengenalan Logika Pemrograman</div>
+              <div class="cert-org">Dicoding Indonesia</div>
+            </div>
+            <span class="cert-status done">✓ Selesai</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo fcc">fCC</div>
+            <div class="cert-info">
+              <div class="cert-name">Responsive Web Design</div>
+              <div class="cert-org">freeCodeCamp</div>
+            </div>
+            <span class="cert-status progress">Proses</span>
+          </div>
+          <div class="cert-card">
+            <div class="cert-logo coursera">Co</div>
+            <div class="cert-info">
+              <div class="cert-name">Python for Everybody</div>
+              <div class="cert-org">Coursera · Univ. of Michigan</div>
+            </div>
+            <span class="cert-status progress">Proses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ACTIVITY ─── -->
+<section class="section section-tinted" id="activity">
+  <div class="container">
+    <div class="sec-hd">
+      <span class="sec-eyebrow">04 / 05</span>
+      <h2 class="sec-title">Kontribusi &amp; Aktivitas</h2>
+      <p class="sec-sub">Apa yang sedang dibangun dan direncanakan</p>
+    </div>
+
+    <div class="act-grid">
+
+      <div class="acard acard-wide">
+        <div class="acard-hd">
+          <div class="acard-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <h3 class="acard-title">GitHub Activity</h3>
+        </div>
+        <p class="acard-desc">Commit aktif pada proyek-proyek kuliah dan eksperimen mandiri. Fokus pada konsistensi daripada kuantitas repo.</p>
+        <div class="contrib-grid" id="contrib-grid"></div>
+        <div class="contrib-legend">
+          <span>Kurang</span>
+          <span class="cl-sq sq0"></span>
+          <span class="cl-sq sq1"></span>
+          <span class="cl-sq sq2"></span>
+          <span class="cl-sq sq3"></span>
+          <span class="cl-sq sq4"></span>
+          <span>Lebih</span>
+        </div>
+        <a href="https://github.com/Rolang-git" target="_blank" class="acard-link">Lihat profil GitHub →</a>
+      </div>
+
+      <div class="acard">
+        <div class="acard-hd">
+          <div class="acard-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="acard-title">Open Source</h3>
+        </div>
+        <p class="acard-desc">Menjajaki kontribusi open source — laporan bug kecil dan perbaikan dokumentasi. Sedang mencari proyek yang ramah kontributor baru.</p>
+        <a href="#" class="acard-link">Lihat kontribusi →</a>
+      </div>
+
+      <div class="acard">
+        <div class="acard-hd">
+          <div class="acard-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="acard-title">Blog Teknis</h3>
+        </div>
+        <p class="acard-desc">Mendokumentasikan proses belajar dari setiap proyek. Blog teknis sedang direncanakan — target tulisan pertama segera.</p>
+        <a href="#" class="acard-link">Lihat blog →</a>
+      </div>
+
+      <div class="acard acard-goals">
+        <div class="acard-hd">
+          <div class="acard-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3 class="acard-title">Target 2025</h3>
+        </div>
+        <ul class="goal-list">
+          <li><span class="goal-dot"></span>Selesaikan 2 proyek mandiri yang bisa di-deploy</li>
+          <li><span class="goal-dot"></span>Raih 1 sertifikasi cloud (AWS / GCP Essentials)</li>
+          <li><span class="goal-dot"></span>Mulai blog teknis, tulis rutin tiap bulan</li>
+          <li><span class="goal-dot"></span>Kirim PR pertama ke proyek open source</li>
+          <li><span class="goal-dot"></span>Pelajari React atau Vue untuk frontend modern</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-bracket">[</span>IAF<span class="logo-bracket">]</span></div>
+        <p>Dibangun dengan kesabaran,<br>kopi, dan banyak debugging.</p>
+      </div>
+      <nav class="footer-nav">
+        <span class="footer-nav-hd">Navigasi</span>
+        <a href="#about">Profil</a>
+        <a href="#skills">Skill</a>
+        <a href="#projects">Proyek</a>
+        <a href="#education">Pendidikan</a>
+        <a href="#activity">Aktivitas</a>
+      </nav>
+      <div class="footer-contact">
+        <span class="footer-nav-hd">Kontak</span>
+        <a href="mailto:ibni0907@gmail.com">ibni0907@gmail.com</a>
+        <a href="https://linkedin.com/in/ibni" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Rolang-git" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span>© 2025 Ibni Atha Fauzi · Subang, Indonesia</span>
+      <a href="#top" class="back-top">
+        Kembali ke atas
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5,12 12,5 19,12"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
