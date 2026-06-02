@@ -1346,3 +1346,81 @@ code {
   .footer-brand { grid-column: span 1; }
   .footer-bar { flex-direction: column; gap: 12px; text-align: center; }
 }
+
+/* ═══════════════════════════════════════════════════
+   REACT-BITS STYLE EFFECTS (vanilla recreations)
+   ═══════════════════════════════════════════════════ */
+
+/* ── Hero particles canvas (Particles) ── */
+.rb-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Split / Blur text reveal (Split Text + Blur Text) ── */
+.rb-word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(.45em);
+  transition:
+    opacity   .6s cubic-bezier(.2,.7,.2,1),
+    filter    .6s cubic-bezier(.2,.7,.2,1),
+    transform .6s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--rb-d, 0ms);
+  will-change: opacity, filter, transform;
+}
+.rb-word.in { opacity: 1; filter: blur(0); transform: none; }
+
+/* ── Shiny Text (hero name accent) ── */
+.name-last {
+  background: linear-gradient(110deg,
+    var(--br) 0%, var(--br) 40%,
+    #F4D9B5 50%,
+    var(--br) 60%, var(--br) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: rb-shine 5s linear infinite;
+}
+@keyframes rb-shine {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* ── Spotlight cards (Spotlight Card) ── */
+.rb-spot { position: relative; isolation: isolate; }
+.rb-spot > *:not(.rb-glow) { position: relative; z-index: 1; }
+.rb-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .35s var(--ease);
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%),
+              rgba(196,149,106,.20), transparent 60%);
+}
+.rb-spot:hover .rb-glow { opacity: 1; }
+
+/* ── Click spark canvas (Click Spark) ── */
+.rb-sparks {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* ── Magnetic buttons (Magnet) ── */
+.cta-primary, .cta-ghost { will-change: transform; }
+
+/* ── Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .name-last { animation: none; }
+  .rb-word { transition: none; opacity: 1; filter: none; transform: none; }
+}
