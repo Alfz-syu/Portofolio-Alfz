@@ -73,7 +73,7 @@ export default function App() {
               className="hero-bio"
               animateBy="words"
               delay={30}
-              text="Mahasiswa Sistem Informasi yang membangun solusi digital dari ide ke kode. Spesialis pengembangan web berbasis PHP & MySQL — dari sistem ritel hingga manajemen gudang. Tujuan: menjadi software engineer yang membuat produk yang benar-benar dipakai orang."
+              text="Mahasiswa Teknik Rekayasa Perangkat Lunak yang membangun solusi digital dari ide ke kode. Spesialis pengembangan web berbasis PHP & MySQL — dari sistem ritel hingga manajemen gudang. Tujuan: menjadi software engineer yang membuat produk yang benar-benar dipakai orang."
             />
             <div className="hero-ctas">
               <a href="mailto:ibni0907@gmail.com" className="cta-ghost">
@@ -141,7 +141,7 @@ export default function App() {
           <div className="sec-hd">
             <span className="sec-eyebrow">01 / 05</span>
             <h2 className="sec-title">Skill &amp; Teknologi</h2>
-            <p className="sec-sub">Kemampuan saat ini — jujur, tanpa dilebih-lebihkan</p>
+            <p className="sec-sub">Kemampuan saat ini :</p>
           </div>
 
           <div className="skills-layout">
@@ -366,8 +366,8 @@ export default function App() {
                     <div className="tline-stem"></div>
                   </div>
                   <div className="tline-body">
-                    <div className="tline-yr">2022 — Sekarang</div>
-                    <div className="tline-title">S1 Sistem Informasi</div>
+                    <div className="tline-yr">2025 — Sekarang</div>
+                    <div className="tline-title">D4 Teknik Rekayasa Perangkat Lunak</div>
                     <div className="tline-place">Politeknik Negeri Subang · Subang, Jawa Barat</div>
                     <p className="tline-desc">Fokus pada rekayasa perangkat lunak, basis data, dan analisis sistem. Aktif mengerjakan praktikum berbasis proyek nyata setiap semester.</p>
                   </div>
