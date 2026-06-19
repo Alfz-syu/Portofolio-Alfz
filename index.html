@@ -1,23 +1,361 @@
 <!DOCTYPE html>
-<html lang="id" data-theme="light">
+<html lang="id" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ibni Atha Fauzi — Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script>
-  // Set theme before paint to avoid flash
-  try {
-    document.documentElement.setAttribute(
-      'data-theme', localStorage.getItem('ehp-theme') || 'light'
-    );
-  } catch (e) {}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibni Atha Fauzi — Web Developer</title>
+  <meta name="description" content="Portofolio Ibni Atha Fauzi — mahasiswa Teknik Rekayasa Perangkat Lunak & web developer berbasis PHP/MySQL. Subang, Indonesia." />
+  <meta name="author" content="Ibni Atha Fauzi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ibni Atha Fauzi — Web Developer" />
+  <meta property="og:description" content="Membangun solusi digital dari ide ke kode." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ProfileCard.css" />
 </head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.jsx"></script>
+<body id="top">
+
+  <!-- ══ 01 — LOADER ══ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-rings">
+        <span></span><span></span><span></span>
+        <div class="loader-logo">IAF</div>
+      </div>
+      <div class="loader-bar"><i></i></div>
+    </div>
+  </div>
+
+  <!-- ══ 02 — CUSTOM CURSOR ══ -->
+  <div id="c-ring"></div>
+  <div id="c-dot"></div>
+
+  <!-- background canvases -->
+  <canvas id="aurora-canvas"></canvas>
+  <canvas id="splash-canvas"></canvas>
+  <canvas class="rb-sparks" id="spark-canvas"></canvas>
+
+  <!-- ══ 03 — NAV ══ -->
+  <header class="nav">
+    <nav class="nav-inner">
+      <a href="#top" class="logo">&lt;<b>IAF</b>/&gt;</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about"     class="nav-link" data-i18n="nav.profil">Profil</a>
+        <a href="#skills"    class="nav-link" data-i18n="nav.skill">Skill</a>
+        <a href="#projects"  class="nav-link" data-i18n="nav.proyek">Proyek</a>
+        <a href="#education" class="nav-link" data-i18n="nav.pendidikan">Pendidikan</a>
+        <a href="#activity"  class="nav-link" data-i18n="nav.aktivitas">Kontribusi</a>
+        <a href="#contact"   class="nav-link" data-i18n="nav.kontak">Kontak</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn lang-btn" id="langBtn" data-i18n-aria="lang.label" aria-label="Ganti bahasa">
+          <span data-i18n="lang.switch_to">EN</span>
+        </button>
+        <button class="icon-btn theme-btn" id="themeBtn" aria-label="Ganti tema terang/gelap">
+          <svg class="sun"  width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Buka menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+  <div class="read-bar" id="readBar"></div>
+
+  <main>
+    <!-- ══ 04 — HERO ══ -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-word" aria-hidden="true">PORTOFOLIO</div>
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span data-i18n="hero.status">Available for opportunities</span>
+          </div>
+          <h1 class="hero-name">
+            <span class="name-first shiny-text">Ibni</span>
+            <em class="name-last">Atha Fauzi</em>
+          </h1>
+          <div class="hero-rule"></div>
+          <p class="hero-roles">
+            <span class="typed" id="typed"></span><span class="caret">_</span>
+          </p>
+          <p class="hero-bio" data-i18n="hero.bio" data-blur>Mahasiswa Teknik Rekayasa Perangkat Lunak yang membangun solusi digital dari ide ke kode.</p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn-primary" data-magnet>
+              <span data-i18n="hero.cta_projects">Lihat Proyek</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+            </a>
+            <a href="mailto:ibni0907@gmail.com" class="btn-outline" data-magnet>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+              Email
+            </a>
+            <a href="https://github.com/Rolang-git" target="_blank" rel="noopener" class="btn-outline" data-magnet>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!-- ProfileCard -->
+          <div class="pc-wrap" id="profileCard">
+            <div class="pc-card">
+              <div class="pc-photo-fallback" aria-hidden="true">IAF</div>
+              <img class="pc-photo" src="assets/profile.jpg" alt="Foto Ibni Atha Fauzi" loading="lazy"
+                   onerror="this.style.display='none'" />
+              <div class="pc-shine"></div>
+              <div class="pc-glare"></div>
+              <div class="pc-info">
+                <img class="pc-avatar" src="assets/profile.jpg" alt="" aria-hidden="true"
+                     onerror="this.style.display='none'" />
+                <div class="pc-meta">
+                  <b>Ibni Atha Fauzi</b>
+                  <span>Subang, Indonesia</span>
+                </div>
+                <div class="pc-status"><span class="dot"></span><span data-i18n="hero.chip">Open to Work</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-stats" id="heroStats"><!-- diisi script --></div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-track"><div class="scroll-thumb"></div></div>
+        <span>scroll</span>
+      </div>
+    </section>
+
+    <!-- ══ 05 — ABOUT ══ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">01</span>
+          <span class="sec-eyebrow">// 01</span>
+          <h2 class="sec-title" data-i18n="about.title">Profil</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card rb-spot reveal">
+            <div class="rb-glow"></div>
+            <p class="about-lead" data-i18n="about.lead">Halo — saya Ibni, mahasiswa Teknik Rekayasa Perangkat Lunak yang senang mengubah masalah nyata menjadi aplikasi yang benar-benar dipakai.</p>
+            <p data-i18n="about.p1">Saya mulai dari penasaran dengan cara kerja website, lalu jatuh cinta pada proses membangunnya — dari merancang basis data, menulis logika back-end PHP, sampai merapikan tampilan. Beberapa proyek saya lahir dari kebutuhan nyata, seperti sistem kasir ritel dan manajemen gudang.</p>
+            <p data-i18n="about.p2">Saya percaya konsistensi mengalahkan kecepatan: lebih baik menyelesaikan satu proyek dengan rapi daripada memulai sepuluh yang terbengkalai. Sekarang saya sedang memperdalam JavaScript modern dan arsitektur aplikasi yang lebih bersih.</p>
+          </div>
+          <aside class="about-side reveal">
+            <div class="about-stats">
+              <div class="aside-stat"><b>2022</b><span data-i18n="about.s1">Mulai belajar coding</span></div>
+              <div class="aside-stat"><b>5+</b><span data-i18n="about.s2">Proyek selesai</span></div>
+              <div class="aside-stat"><b>4</b><span data-i18n="about.s3">Sertifikasi</span></div>
+            </div>
+            <div class="about-quote">
+              <span data-i18n="about.quote_label">// fun fact</span>
+              <em data-i18n="about.quote">Debugging paling produktif saya sering terjadi saat menyeduh kopi.</em>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 06 — SKILLS ══ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">02</span>
+          <span class="sec-eyebrow">// 02</span>
+          <h2 class="sec-title" data-i18n="skills.title">Skill &amp; Teknologi</h2>
+          <p class="sec-sub" data-i18n="skills.sub">Kemampuan saat ini :</p>
+        </div>
+        <div class="skills-wrap" id="skillsWrap"><!-- diisi script --></div>
+      </div>
+    </section>
+
+    <!-- ══ 07 — PROJECTS ══ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">03</span>
+          <span class="sec-eyebrow">// 03</span>
+          <h2 class="sec-title" data-i18n="projects.title">Proyek</h2>
+          <p class="sec-sub" data-i18n="projects.sub">Kerja nyata — dari kelas ke produksi</p>
+        </div>
+        <div class="proj-filters reveal" id="projFilters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Semua</button>
+          <button class="filter-btn" data-filter="projek" data-i18n="filter.projek">Projek</button>
+          <button class="filter-btn" data-filter="latihan" data-i18n="filter.latihan">Latihan</button>
+        </div>
+        <div class="proj-grid" id="projGrid"><!-- diisi script --></div>
+      </div>
+    </section>
+
+    <!-- ══ 08 — EDUCATION ══ -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">04</span>
+          <span class="sec-eyebrow">// 04</span>
+          <h2 class="sec-title" data-i18n="education.title">Pendidikan &amp; Sertifikasi</h2>
+          <p class="sec-sub" data-i18n="education.sub">Jalur belajar formal dan mandiri</p>
+        </div>
+        <div class="edu-grid">
+          <div class="reveal">
+            <h3 class="tl-hd" data-i18n="education.formal_hd">Pendidikan Formal</h3>
+            <div class="timeline">
+              <div class="tl-item dot-pulse">
+                <div class="tl-card rb-spot">
+                  <div class="rb-glow"></div>
+                  <div class="tl-date" data-i18n="education.formal1.yr">2025 — Sekarang</div>
+                  <div class="tl-title" data-i18n="education.formal1.title">D4 Teknik Rekayasa Perangkat Lunak</div>
+                  <div class="tl-place" data-i18n="education.formal1.place">Politeknik Negeri Subang · Subang, Jawa Barat</div>
+                  <div class="tl-desc" data-i18n="education.formal1.desc">Fokus pada rekayasa perangkat lunak, basis data, dan analisis sistem.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal">
+            <h3 class="tl-hd" data-i18n="education.cert_hd">Kursus &amp; Sertifikasi</h3>
+            <div class="cert-list" id="certList"><!-- diisi script --></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 09 — ACTIVITY ══ -->
+    <section class="section" id="activity">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">05</span>
+          <span class="sec-eyebrow">// 05</span>
+          <h2 class="sec-title" data-i18n="activity.title">Kontribusi &amp; Aktivitas</h2>
+          <p class="sec-sub" data-i18n="activity.sub">Apa yang sedang dibangun dan direncanakan</p>
+        </div>
+        <div class="contrib-stats reveal" id="contribStats">
+          <div class="cstat"><b class="countup" data-target="120">0</b><span data-i18n="activity.stat_commits">Commits</span></div>
+          <div class="cstat"><b class="countup" data-target="8">0</b><span data-i18n="activity.stat_repos">Repositori</span></div>
+          <div class="cstat"><b class="countup" data-target="14">0</b><span data-i18n="activity.stat_months">Bulan Aktif</span></div>
+        </div>
+        <div class="contrib-grid">
+          <div class="contrib-card rb-spot reveal">
+            <div class="rb-glow"></div>
+            <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span><span data-i18n="activity.github.title">GitHub Activity</span></h3>
+            <p data-i18n="activity.github.desc">Commit aktif pada proyek kuliah dan eksperimen mandiri.</p>
+            <a href="https://github.com/Rolang-git" target="_blank" rel="noopener" class="acard-link" data-i18n="activity.github.link">Lihat profil GitHub →</a>
+          </div>
+          <div class="contrib-card rb-spot reveal">
+            <div class="rb-glow"></div>
+            <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg></span><span data-i18n="activity.opensource.title">Open Source</span></h3>
+            <p data-i18n="activity.opensource.desc">Menjajaki kontribusi open source — laporan bug kecil dan perbaikan dokumentasi.</p>
+            <a href="https://github.com/Rolang-git" target="_blank" rel="noopener" class="acard-link" data-i18n="activity.opensource.link">Lihat kontribusi →</a>
+          </div>
+          <div class="contrib-card rb-spot reveal">
+            <div class="rb-glow"></div>
+            <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><span data-i18n="activity.blog.title">Blog Teknis</span></h3>
+            <p data-i18n="activity.blog.desc">Mendokumentasikan proses belajar dari setiap proyek.</p>
+            <a href="#" class="acard-link" data-i18n="activity.blog.link">Lihat blog →</a>
+          </div>
+          <div class="contrib-card goals-card rb-spot reveal">
+            <div class="rb-glow"></div>
+            <h3><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span data-i18n="activity.goals.title">Target 2025</span></h3>
+            <ul class="goals-list" id="goalsList"><!-- diisi script --></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 10 — CONTACT ══ -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="sec-head reveal">
+          <span class="sec-num">06</span>
+          <span class="sec-eyebrow">// 06</span>
+          <h2 class="sec-title" data-i18n="contact.title">Kontak</h2>
+          <p class="sec-sub" data-i18n="contact.sub">Punya proyek atau sekadar ingin menyapa? Kirim pesan.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="reveal">
+            <div class="contact-chips">
+              <a class="contact-chip" href="mailto:ibni0907@gmail.com">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></span>
+                <span><b>Email</b><span>ibni0907@gmail.com</span></span>
+              </a>
+              <a class="contact-chip" href="https://linkedin.com/in/ibni" target="_blank" rel="noopener">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M12 10v7M12 13a3 3 0 0 1 6 0v4"/></svg></span>
+                <span><b>LinkedIn</b><span>linkedin.com/in/ibni</span></span>
+              </a>
+              <a class="contact-chip" href="https://github.com/Rolang-git" target="_blank" rel="noopener">
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></span>
+                <span><b>GitHub</b><span>github.com/Rolang-git</span></span>
+              </a>
+            </div>
+          </div>
+          <form class="contact-form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="5016c925-a702-40e2-a20a-71273d39cde4" />
+            <input type="hidden" name="subject" value="Pesan baru dari portofolio" />
+            <input type="hidden" name="from_name" value="Portofolio Ibni Atha Fauzi" />
+            <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="field">
+              <label for="cf-name" data-i18n="contact.f_name">Nama</label>
+              <input id="cf-name" type="text" name="name" required placeholder="Nama kamu" />
+            </div>
+            <div class="field">
+              <label for="cf-email" data-i18n="contact.f_email">Email</label>
+              <input id="cf-email" type="email" name="email" required placeholder="kamu@email.com" />
+            </div>
+            <div class="field">
+              <label for="cf-msg" data-i18n="contact.f_msg">Pesan</label>
+              <textarea id="cf-msg" name="message" rows="4" required placeholder="Tulis pesanmu…"></textarea>
+            </div>
+            <button type="submit" class="btn-primary" data-magnet id="cfSubmit">
+              <span data-i18n="contact.send">Kirim Pesan</span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ══ 11 — FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <p class="footer-tag" data-i18n="footer.tagline">Dibangun dengan kesabaran,
+kopi, dan banyak debugging.</p>
+        <div class="footer-col">
+          <h4 data-i18n="footer.nav_hd">Navigasi</h4>
+          <a href="#about" data-i18n="nav.profil">Profil</a>
+          <a href="#skills" data-i18n="nav.skill">Skill</a>
+          <a href="#projects" data-i18n="nav.proyek">Proyek</a>
+          <a href="#education" data-i18n="nav.pendidikan">Pendidikan</a>
+          <a href="#contact" data-i18n="nav.kontak">Kontak</a>
+        </div>
+        <div class="footer-col">
+          <h4 data-i18n="footer.contact_hd">Kontak</h4>
+          <a href="mailto:ibni0907@gmail.com">ibni0907@gmail.com</a>
+          <a href="https://linkedin.com/in/ibni" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/Rolang-git" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="footer-bot">
+        <small data-i18n="footer.copyright">© 2025 Ibni Atha Fauzi · Subang, Indonesia</small>
+        <small class="clock" id="clock">--:--:--</small>
+        <a href="#top" class="back-top" data-i18n="footer.back_top">↑ Kembali ke atas</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <script src="splash-cursor.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

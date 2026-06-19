@@ -1,0 +1,88 @@
+/* =====================================================================
+   ProfileCard — tilt 3D pointer card (ported from ReactBits ProfileCard)
+   Driven by --rotate-x/y, --pointer-x/y set in script.js (initProfileCard).
+   ===================================================================== */
+
+.pc-wrap {
+  --rotate-x: 0deg;
+  --rotate-y: 0deg;
+  --pointer-x: 50%;
+  --pointer-y: 50%;
+  --card-opacity: 0;
+  width: min(320px, 78vw);
+  perspective: 1000px;
+}
+
+.pc-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--r-xl);
+  background: linear-gradient(160deg, var(--bg-card), var(--bg-2));
+  border: 1px solid var(--line-2);
+  box-shadow: var(--sh-3);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rotate-x)) rotateY(var(--rotate-y));
+  transition: transform .25s var(--ease), box-shadow var(--ease);
+  will-change: transform;
+}
+.pc-wrap:hover .pc-card { transition: transform .08s linear; }
+
+.pc-photo {
+  position: absolute; inset: 0; z-index: 1;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: translateZ(0);
+}
+
+/* gradient frame so a placeholder photo still looks intentional */
+.pc-photo-fallback {
+  position: absolute; inset: 0; z-index: 0;
+  display: grid; place-items: center;
+  background:
+    radial-gradient(120% 80% at 30% 10%, var(--br-3), transparent 60%),
+    linear-gradient(160deg, var(--br), var(--br-4));
+  font-family: var(--f-serif); font-size: 4rem; font-weight: 700; color: rgba(255,255,255,.32);
+}
+
+/* shine — light streak that follows the pointer */
+.pc-shine {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none; mix-blend-mode: overlay;
+  opacity: var(--card-opacity);
+  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y),
+              rgba(255,255,255,.55), transparent 38%);
+  transition: opacity var(--ease);
+}
+/* glare — subtle color wash */
+.pc-glare {
+  position: absolute; inset: 0; z-index: 3; pointer-events: none;
+  opacity: var(--card-opacity);
+  background: radial-gradient(circle at var(--pointer-x) var(--pointer-y),
+              var(--accent-glow), transparent 55%);
+  transition: opacity var(--ease);
+}
+
+/* glass info bar floating above the card */
+.pc-info {
+  position: absolute; left: 14px; right: 14px; bottom: 14px; z-index: 4;
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; border-radius: var(--r-md);
+  background: color-mix(in srgb, var(--bg-card) 62%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--line-2);
+  transform: translateZ(40px);
+}
+.pc-avatar {
+  width: 38px; height: 38px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--br); flex-shrink: 0;
+}
+.pc-meta b { display: block; font-family: var(--f-serif); font-size: 1rem; color: var(--tx-1); line-height: 1.1; }
+.pc-meta span { font-family: var(--f-mono); font-size: .68rem; color: var(--tx-3); }
+.pc-status { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: .68rem; color: var(--tx-2); }
+.pc-status .dot { width: 7px; height: 7px; border-radius: 50%; background: #46c46a; box-shadow: 0 0 8px #46c46a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .pc-card { transform: none !important; }
+  .pc-shine, .pc-glare { display: none; }
+}
