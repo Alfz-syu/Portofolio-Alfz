@@ -11,7 +11,7 @@ const I18N = {
   id: {
     nav: { profil: 'Profil', skill: 'Skill', proyek: 'Proyek', pendidikan: 'Pendidikan', aktivitas: 'Kontribusi', kontak: 'Kontak' },
     hero: {
-      status: 'Available for opportunities', chip: 'Open to Work', cta_projects: 'Lihat Proyek',
+      status: 'Available for opportunities', cta_projects: 'Lihat Proyek',
       roles: ['Information Systems Student', 'Web Developer', 'Vibe Coder'],
       bio: 'Mahasiswa Teknik Rekayasa Perangkat Lunak yang membangun solusi digital dari ide ke kode. Spesialis pengembangan web berbasis PHP & MySQL — dari sistem ritel hingga manajemen gudang. Tujuan: menjadi software engineer yang membuat produk yang benar-benar dipakai orang.',
       stats: [ { n: '2+', l: 'Tahun belajar web dev' }, { n: '5+', l: 'Proyek selesai' }, { n: '3+', l: 'Tech stack dikuasai' } ],
@@ -22,7 +22,7 @@ const I18N = {
       p1: 'Saya mulai dari penasaran dengan cara kerja website, lalu jatuh cinta pada proses membangunnya — dari merancang basis data, menulis logika back-end PHP, sampai merapikan tampilan. Beberapa proyek saya lahir dari kebutuhan nyata, seperti sistem kasir ritel dan manajemen gudang.',
       p2: 'Saya percaya konsistensi mengalahkan kecepatan: lebih baik menyelesaikan satu proyek dengan rapi daripada memulai sepuluh yang terbengkalai. Sekarang saya sedang memperdalam JavaScript modern dan arsitektur aplikasi yang lebih bersih.',
       s1: 'Mulai belajar coding', s2: 'Proyek selesai', s3: 'Sertifikasi',
-      quote_label: '// fun fact', quote: 'Debugging paling produktif saya sering terjadi saat menyeduh kopi.',
+      quote_label: '// fun fact', quote: 'Ingin Menjadi Programmer Handal tapi enggan ngoding.',
     },
     skills: { title: 'Skill & Teknologi', sub: 'Kemampuan saat ini :', cat_language: 'Bahasa Pemrograman', cat_framework: 'Framework', cat_tool: 'Tools' },
     filter: { all: 'Semua', projek: 'Projek', latihan: 'Latihan' },
@@ -60,7 +60,7 @@ const I18N = {
   en: {
     nav: { profil: 'Profile', skill: 'Skills', proyek: 'Projects', pendidikan: 'Education', aktivitas: 'Activity', kontak: 'Contact' },
     hero: {
-      status: 'Available for opportunities', chip: 'Open to Work', cta_projects: 'View Projects',
+      status: 'Available for opportunities', cta_projects: 'View Projects',
       roles: ['Information Systems Student', 'Web Developer', 'Vibe Coder'],
       bio: 'Software Engineering student building digital solutions from idea to code. Specialized in PHP & MySQL web development — from retail systems to warehouse management. Goal: become a software engineer who builds products people actually use.',
       stats: [ { n: '2+', l: 'Years learning web dev' }, { n: '5+', l: 'Projects completed' }, { n: '3+', l: 'Tech stacks mastered' } ],
@@ -71,7 +71,7 @@ const I18N = {
       p1: 'It started with curiosity about how websites work, then grew into a love for building them — designing databases, writing PHP back-end logic, and polishing the UI. Several of my projects were born from real needs, like a retail POS and a warehouse management system.',
       p2: 'I believe consistency beats speed: better to finish one project cleanly than start ten that stall. Right now I’m going deeper into modern JavaScript and cleaner application architecture.',
       s1: 'Started learning to code', s2: 'Projects completed', s3: 'Certifications',
-      quote_label: '// fun fact', quote: 'My most productive debugging usually happens while brewing coffee.',
+      quote_label: '// fun fact', quote: 'Wants to become a skilled programmer but reluctant to code.',
     },
     skills: { title: 'Skills & Technology', sub: 'Current capabilities:', cat_language: 'Programming Languages', cat_framework: 'Frameworks', cat_tool: 'Tools' },
     filter: { all: 'All', projek: 'Projects', latihan: 'Practice' },
@@ -135,13 +135,13 @@ const SKILL_GROUPS = [
 
 const PROJECTS = [
   { key: 'featured1', cat: 'projek', typeKey: 'projects.type_mandiri', tag: 'IAF', tags: ['PHP', 'MySQL', 'Bootstrap'],
-    repo: 'https://github.com/Rolang-git', demo: '#', doc: null },
+    repo: 'https://github.com/Alfz-syu', demo: '#', doc: null },
   { key: 'featured2', cat: 'projek', typeKey: 'projects.type_mandiri', tag: 'SG', tags: ['PHP', 'PDO', 'Bootstrap'],
-    repo: 'https://github.com/Rolang-git', demo: '#', doc: null },
+    repo: 'https://github.com/Alfz-syu', demo: '#', doc: null },
   { key: 'small1', cat: 'latihan', typeKey: 'projects.type_latihan', tag: 'TD', tags: ['JavaScript', 'localStorage'],
-    repo: 'https://github.com/Rolang-git', demo: '#', doc: null },
+    repo: 'https://github.com/Alfz-syu', demo: '#', doc: null },
   { key: 'small2', cat: 'latihan', typeKey: 'projects.type_latihan', tag: 'MX', tags: ['JavaScript', 'Math'],
-    repo: 'https://github.com/Rolang-git', demo: '#', doc: null },
+    repo: 'https://github.com/Alfz-syu', demo: '#', doc: null },
   { key: 'small3', cat: 'latihan', typeKey: 'projects.type_akademik', tag: 'PG', tags: ['Analysis', 'DFD'],
     repo: null, demo: null, doc: '#' },
 ];
