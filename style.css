@@ -130,7 +130,7 @@ body::after {
 
 /* ── REACTBITS: BlurText ─────────────────────────────────────────── */
 .rb-word {
-  display: inline-block; opacity: 0; filter: blur(12px); transform: translateY(.45em);
+  display: inline-block; white-space: pre; opacity: 0; filter: blur(12px); transform: translateY(.45em);
   transition: opacity .6s cubic-bezier(.2,.7,.2,1), filter .6s cubic-bezier(.2,.7,.2,1),
               transform .6s cubic-bezier(.2,.7,.2,1);
   transition-delay: var(--rb-d, 0ms); will-change: opacity, filter, transform;

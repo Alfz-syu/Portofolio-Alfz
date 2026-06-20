@@ -12,7 +12,7 @@ const I18N = {
     nav: { profil: 'Profil', skill: 'Skill', proyek: 'Proyek', pendidikan: 'Pendidikan', aktivitas: 'Kontribusi', kontak: 'Kontak' },
     hero: {
       status: 'Available for opportunities', chip: 'Open to Work', cta_projects: 'Lihat Proyek',
-      roles: ['Information Systems Student', 'Web Developer', 'Subang, ID'],
+      roles: ['Information Systems Student', 'Web Developer', 'Vibe Coder'],
       bio: 'Mahasiswa Teknik Rekayasa Perangkat Lunak yang membangun solusi digital dari ide ke kode. Spesialis pengembangan web berbasis PHP & MySQL — dari sistem ritel hingga manajemen gudang. Tujuan: menjadi software engineer yang membuat produk yang benar-benar dipakai orang.',
       stats: [ { n: '2+', l: 'Tahun belajar web dev' }, { n: '5+', l: 'Proyek selesai' }, { n: '3+', l: 'Tech stack dikuasai' } ],
     },
@@ -61,7 +61,7 @@ const I18N = {
     nav: { profil: 'Profile', skill: 'Skills', proyek: 'Projects', pendidikan: 'Education', aktivitas: 'Activity', kontak: 'Contact' },
     hero: {
       status: 'Available for opportunities', chip: 'Open to Work', cta_projects: 'View Projects',
-      roles: ['Information Systems Student', 'Web Developer', 'Subang, ID'],
+      roles: ['Information Systems Student', 'Web Developer', 'Vibe Coder'],
       bio: 'Software Engineering student building digital solutions from idea to code. Specialized in PHP & MySQL web development — from retail systems to warehouse management. Goal: become a software engineer who builds products people actually use.',
       stats: [ { n: '2+', l: 'Years learning web dev' }, { n: '5+', l: 'Projects completed' }, { n: '3+', l: 'Tech stacks mastered' } ],
     },
@@ -374,7 +374,7 @@ function initBlurText() {
    ===================================================================== */
 function initMagnet() {
   if (!hoverCapable) return;
-  const PAD = 80, STRENGTH = 3;
+  const PAD = 30, STRENGTH = 5;
   $$('[data-magnet]').forEach((el) => {
     if (el.dataset.magnetDone) return; el.dataset.magnetDone = '1';
     el.style.transition = 'transform .4s cubic-bezier(.2,.7,.2,1)';
