@@ -1,7 +1,7 @@
 /* =====================================================================
    script.js — Portofolio Ibni Atha Fauzi
    Vanilla JS. Berisi: i18n (ID/EN), data konten, render section,
-   dan port efek ReactBits (BlurText, Magnet, SpotlightCard, ClickSpark,
+   dan port efek ReactBits (BlurText, SpotlightCard, ClickSpark,
    Aurora, HeroParticles, ProfileCard tilt).
    ===================================================================== */
 'use strict';
@@ -281,8 +281,8 @@ function renderDynamic() {
     ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
     requestAnimationFrame(loop);
   })();
-  addEventListener('mouseover', (e) => { if (e.target.closest('a,button,input,textarea,[data-magnet]')) ring.classList.add('hover'); });
-  addEventListener('mouseout',  (e) => { if (e.target.closest('a,button,input,textarea,[data-magnet]')) ring.classList.remove('hover'); });
+  addEventListener('mouseover', (e) => { if (e.target.closest('a,button,input,textarea')) ring.classList.add('hover'); });
+  addEventListener('mouseout',  (e) => { if (e.target.closest('a,button,input,textarea')) ring.classList.remove('hover'); });
   addEventListener('mousedown', () => ring.classList.add('click'));
   addEventListener('mouseup',   () => ring.classList.remove('click'));
 })();
@@ -366,26 +366,6 @@ function initBlurText() {
       if (e.isIntersecting) { $$('.rb-word', el).forEach((s) => s.classList.add('in')); io.disconnect(); }
     }, { threshold: 0.1 });
     io.observe(el);
-  });
-}
-
-/* =====================================================================
-   ReactBits — Magnet (initMagnet)
-   ===================================================================== */
-function initMagnet() {
-  if (!hoverCapable) return;
-  const PAD = 30, STRENGTH = 5;
-  $$('[data-magnet]').forEach((el) => {
-    if (el.dataset.magnetDone) return; el.dataset.magnetDone = '1';
-    el.style.transition = 'transform .4s cubic-bezier(.2,.7,.2,1)';
-    addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      const dx = e.clientX - cx, dy = e.clientY - cy;
-      if (Math.abs(dx) < r.width / 2 + PAD && Math.abs(dy) < r.height / 2 + PAD) {
-        el.style.transform = `translate(${dx / STRENGTH}px, ${dy / STRENGTH}px)`;
-      } else { el.style.transform = ''; }
-    }, { passive: true });
   });
 }
 
@@ -640,7 +620,6 @@ function initCountUp() {
 applyI18n();
 renderDynamic();
 initBlurText();
-initMagnet();
 initSpotlight();
 initReveal();
 initCountUp();
